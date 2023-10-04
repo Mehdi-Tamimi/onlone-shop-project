@@ -2,26 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
+  font-family: iranyekanRegular;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: iranyekanBold;
+  src: url("../assets/fonts/iranyekanwebbold.woff") format("woff");
+  font-display: fallback;
 }
-
+@font-face {
+  font-family: iranyekanRegular;
+  src: url("../assets/fonts/iranyekanwebregular.woff") format("woff");
+  font-display: fallback;
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #F6F5F5;
+}
+.container {
+  @apply px-4 w-full flex flex-col items-center
+}
+.searchContainer {
+  @apply w-full bg-white flex justify-between items-center px-1 rounded-xl py-1
+}
+.searchBar {
+  @apply h-8 outline-none px-1 w-[calc(100%-40px)]
+
+}
+.searchButton {
+  @apply bg-[#159911] h-8 w-8 rounded-xl flex items-center justify-center
+}
+.header {
+  @apply pt-10 w-full
+}
+.sliderContainer {
+  @apply flex
+}
+.sliderContainer__header {
+  @apply flex items-center py-5
+}
+.sliderTitle {
+  @apply pl-3 text-[#717171]
+}
+.hr {
+  @apply w-full border-t-[1px] pr-4 border-[#717171]
+}
+.card {
+  @apply w-28 bg-white m-1 rounded-lg flex flex-col items-center 
+}
+.cardImage {
+  @apply rotate-[12deg] w-16
+}
+.cardImage__container {
+  @apply p-3
+}
+.cardDetails {
+  @apply flex flex-col p-2
+}
+.cardTitle {
+  @apply text-xs text-[#717171]
+}
+.cardPrice {
+  @apply font-[iranyekanBold] text-base text-[#717171]
 }
